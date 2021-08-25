@@ -17,6 +17,7 @@ function onSearch(evt) {
   }
   clearCardCont();
   fetchCountries(evt.target.value.trim()).then(markup);
+  clearInput();
 }
 
 function makeCountryMarkup(country) {
