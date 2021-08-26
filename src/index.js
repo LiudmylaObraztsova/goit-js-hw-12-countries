@@ -1,4 +1,4 @@
-const debounce = require('lodash.debounce');
+import debounce from 'lodash.debounce';
 import './sass/main.scss';
 import fetchCountries from './js/fetchCountries.js';
 import countriesListTpl from './templates/countriesListTpl.hbs';
@@ -12,6 +12,7 @@ const refs = getRefs();
 refs.inputSearchEl.addEventListener('input', debounce(onSearch, 1500));
 
 function onSearch(evt) {
+  evt.preventDefault()
   if (evt.target.value.trim() === '') {
     return warning('Empty request, enter your search data')
   }
